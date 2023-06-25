@@ -4,15 +4,14 @@ import { Question } from "@/domain/forum/enterprise/entities/question";
 export class InMemoryQuestionsRepository implements QuestionsRepository {
   public items: Question[] = [];
 
-
   async findBySlug(slug: string) {
-    const question = this.items.find((item) => item.slug.value === slug)
+    const question = this.items.find((item) => item.slug.value === slug);
 
     if (!question) {
-      return null
+      return null;
     }
 
-    return question
+    return question;
   }
 
   async create(question: Question) {

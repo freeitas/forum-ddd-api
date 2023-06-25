@@ -6,7 +6,7 @@ export class Slug {
   }
 
   static create(value: string) {
-    return new Slug(value)
+    return new Slug(value);
   }
 
   /**
