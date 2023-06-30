@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/freeitas/node-ddd#readme",
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "@types/jest": "^29.5.2",
     "@types/node": "^18.16.0",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
