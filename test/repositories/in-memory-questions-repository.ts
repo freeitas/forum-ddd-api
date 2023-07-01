@@ -5,13 +5,13 @@ export class InMemoryQuestionsRepository implements QuestionsRepository {
   public items: Question[] = [];
 
   async findById(id: string) {
-    const question = this.items.find((item) => item.id.toString() === id)
+    const question = this.items.find((item) => item.id.toString() === id);
 
     if (!question) {
-      return null
+      return null;
     }
 
-    return question
+    return question;
   }
 
   async findBySlug(slug: string) {
@@ -28,9 +28,15 @@ export class InMemoryQuestionsRepository implements QuestionsRepository {
     this.items.push(question);
   }
 
-  async delete(question: Question) {
-    const itemIndex = this.items.findIndex((item) => item.id === question.id)
+  async save(question: Question) {
+    const itemIndex = this.items.findIndex((item) => item.id === question.id);
 
-    this.items.splice(itemIndex, 1)
+    this.items[itemIndex] = question;
+  }
+
+  async delete(question: Question) {
+    const itemIndex = this.items.findIndex((item) => item.id === question.id);
+
+    this.items.splice(itemIndex, 1);
   }
 }
